@@ -29,12 +29,19 @@
         </div>        
         
         <div class="user_info">
-          <a href="login.html">확인</a>
-          <a href="login.html">취소</a>
+          <a id="ok" href="login.html">확인</a>
+          <a id="cancel" href="login.html">취소</a>
         </div>
         
       </div>
 
     </div>
+    
+    <script>
+      document.getElementById('ok').onclick = function(){
+        alert("아이디는 abcd1234 입니다.")
+      }
+    </script>
+    
   </body>
 </html>
