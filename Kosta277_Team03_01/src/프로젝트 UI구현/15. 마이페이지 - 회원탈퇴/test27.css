@@ -1,4 +1,5 @@
-// 김건우 확인
+// 源�嫄댁슦 �솗�씤
+// 최민우 확인
 
 * {
   margin: 0px;
@@ -48,7 +49,7 @@ a {
 
 .container {
   display: flex;
-  flex-direction: column; /* 열 방향으로 아이템을 배치 */
+  flex-direction: column; /* �뿴 諛⑺뼢�쑝濡� �븘�씠�뀥�쓣 諛곗튂 */
   margin: 0px 0px 4px 4px
 }
 
@@ -63,9 +64,9 @@ a {
 }
 
 .item { 
-  flex: 1; /* 아이템이 가능한 한 크게 확장 */
+  flex: 1; /* �븘�씠�뀥�씠 媛��뒫�븳 �븳 �겕寃� �솗�옣 */
   display: flex;
-  justify-content: left; /* 내부 아이템을 가로 가운데 정렬 */
+  justify-content: left; /* �궡遺� �븘�씠�뀥�쓣 媛�濡� 媛��슫�뜲 �젙�젹 */
   align-items: center;
 }
 
@@ -241,10 +242,10 @@ a {
 .board_info > div::after {
   content: "";
   width: 1px;
-  height: 100%; /* 부모 요소의 높이를 기준으로 */
+  height: 100%; /* 遺�紐� �슂�냼�쓽 �넂�씠瑜� 湲곗��쑝濡� */
   position: absolute;
-  top: 0; /* 상단에 배치 */
-  right: -2px; /* 오른쪽에 붙이기 */
+  top: 0; /* �긽�떒�뿉 諛곗튂 */
+  right: -2px; /* �삤瑜몄そ�뿉 遺숈씠湲� */
   background-color: black;
 }
 
@@ -357,8 +358,8 @@ a {
 .comment_input > input,
 .comment_input > a {
   margin-top: 5px;
-  box-sizing: border-box; /* 너비에 border와 padding을 포함시키기 위해 */
-  width: calc(100% - 50px); /* 각 요소의 너비를 50%로 설정하고, margin도 고려하여 조정 */
+  box-sizing: border-box; /* �꼫鍮꾩뿉 border�� padding�쓣 �룷�븿�떆�궎湲� �쐞�빐 */
+  width: calc(100% - 50px); /* 媛� �슂�냼�쓽 �꼫鍮꾨�� 50%濡� �꽕�젙�븯怨�, margin�룄 怨좊젮�븯�뿬 議곗젙 */
 }
 
 .comment_input > a {
