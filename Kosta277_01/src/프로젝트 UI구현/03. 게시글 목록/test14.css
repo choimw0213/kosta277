@@ -1,0 +1,217 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+    font-size: 10px;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.board_wrap {
+  margin: 5px;
+  padding: 5px;
+}
+
+.board_header > div {
+  display: inline-block;
+  background-color: #eeeeee;
+}
+
+.board_header > div > div {
+  display: inline-block;
+}
+
+.board_header > div a {
+  border: 1px solid black;
+  padding: 0 20px;
+}
+
+.board_banner{
+  border: 1px solid black;
+  margin-top: 5px;
+  text-align: center;
+  padding: 40px;
+  font-size: 25px;
+  background-color: #eeeeee;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* 열 방향으로 아이템을 배치 */
+  margin: 0px 0px 4px 4px
+}
+
+.container > div > div > a {
+  border: 1px solid black;
+  margin-right: 5px;
+  margin-top: 4px;
+}
+
+.row {
+  display: flex;
+}
+
+.item { 
+  flex: 1; /* 아이템이 가능한 한 크게 확장 */
+  display: flex;
+  justify-content: left; /* 내부 아이템을 가로 가운데 정렬 */
+  align-items: center;
+}
+
+.item_category {
+  color: red;
+  width: 50px;
+  text-align: center;
+}
+
+.item_title {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.container_wrap {
+  background-color: #eeeeee;
+  margin-top: 5px;
+  border: 1px solid black;
+  padding-top: 4px;
+}
+
+.container_title > a {
+  border: 1px solid black;
+  font-size: 15px;
+  padding: 0px 10px;
+}
+
+.container_title > a:first-child {
+  margin: 0px 0px 0px 4px;
+}
+
+.board_name {
+  border: 1px solid black;
+  margin-top: 5px;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #eeeeee;
+}
+
+.board_category > a {
+  border: 1px solid black;
+  margin-top: 5px;
+  background-color: #eeeeee;
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.board_list {
+  margin: 5px;
+  width: 100%;
+  font-size: 0px;
+  text-align: center;
+  vertical-align: middle;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  margin-left: 0px;
+}
+
+.board_list > div {
+  border-bottom: 1px solid #111;
+  padding: 3px;
+}
+
+.board_list > div > div {
+  display: inline-block;
+  font-size: 12px;
+}
+
+.board_list .seq, 
+.board_list .category,
+.board_list .userid,
+.board_list .date,
+.board_list .view,
+.board_list .like {
+  width: 10%;
+}
+
+.board_list .title {
+  width: 40%;
+}
+
+.top {
+  background: #eeeeee;
+  font-weight: 900;
+}
+
+.board_write > a {
+  border: 1px solid black;
+  float: right;
+  padding: 0px 20px;
+}
+
+.board_page {
+  text-align: center;
+  font-size: 0;
+  margin-top: 25px;
+}
+
+.board_page a {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  border: 1px solid #111;
+  border-left: 0;
+  line-height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.board_page a.bt {
+  font-size: 11px;
+  padding-top: 4px;
+}
+
+.board_page a.num {
+  font-size: 11px;
+  padding-top: 4px;
+}
+
+.board_page a:first-child {
+  border-left: 1px solid #111;
+}
+
+.board_page a.on {
+  background: #000000; 
+  color: white;
+}
+
+.search {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.search_type {
+  text-align: center;
+}
+
+
+
+
+
+
