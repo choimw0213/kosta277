@@ -1,8 +1,7 @@
 
 public class HelloTest {
 	public static void main(String [] args) {
-		System.out.println("ÀÚ¹Ù ½ÃÀÛ");
-		// git Å×½ºÆ®1
-		// git Å×½ºÆ®2
+		System.out.println("ï¿½Ú¹ï¿½ ï¿½ï¿½ï¿½ï¿½");
+		// git ï¿½×½ï¿½Æ®1
 	}
 }
