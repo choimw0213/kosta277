@@ -17,8 +17,9 @@ a {
 }
 
 .board_wrap {
-  margin: 5px;
+  margin: 10px;
   padding: 5px;
+  min-width: 550px;
 }
 
 .board_header > div {
@@ -46,7 +47,7 @@ a {
 
 .container {
   display: flex;
-  flex-direction: column; /* �뿴 諛⑺뼢�쑝濡� �븘�씠�뀥�쓣 諛곗튂 */
+  flex-direction: column;
   margin: 0px 0px 4px 4px
 }
 
@@ -61,14 +62,13 @@ a {
 }
 
 .item { 
-  flex: 1; /* �븘�씠�뀥�씠 媛��뒫�븳 �븳 �겕寃� �솗�옣 */
+  flex: 1;
   display: flex;
-  justify-content: left; /* �궡遺� �븘�씠�뀥�쓣 媛�濡� 媛��슫�뜲 �젙�젹 */
+  justify-content: left;
   align-items: center;
 }
 
 .item_category {
-  color: red;
   width: 50px;
   text-align: center;
 }
@@ -123,15 +123,21 @@ a {
   font-size: 0px;
   text-align: center;
   vertical-align: middle;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
+
+
+
   margin-left: 0px;
 }
 
 .board_list > div {
-  border-bottom: 1px solid #111;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
   padding: 3px;
+}
+
+.board_list > div:last-child {
+    border-bottom: 1px solid black;
 }
 
 .board_list > div > div {
@@ -155,12 +161,15 @@ a {
 .board_list > .top {
   background: #eeeeee;
   font-weight: 900;
+  margin-bottom: 5px;
+  border-bottom: 1px solid black;  
 }
 
 .board_write > a {
   border: 1px solid black;
   float: right;
   padding: 0px 20px;
+  background: #eeeeee;
 }
 
 .board_page {
@@ -206,6 +215,13 @@ a {
   text-align: center;
 }
 
+.search > a {
+  border: 1px solid black;
+  padding: 0px 10px;
+  font-size: 13px;
+  background-color: #eeeeee;
+}
+
 /*
 .search_type {
   text-align: center;
@@ -239,10 +255,10 @@ a {
 .board_info > div::after {
   content: "";
   width: 1px;
-  height: 100%; /* 遺�紐� �슂�냼�쓽 �넂�씠瑜� 湲곗��쑝濡� */
+  height: 100%;
   position: absolute;
-  top: 0; /* �긽�떒�뿉 諛곗튂 */
-  right: -2px; /* �삤瑜몄そ�뿉 遺숈씠湲� */
+  top: 0;
+  right: -2px;
   background-color: black;
 }
 
@@ -355,8 +371,8 @@ a {
 .comment_input > input,
 .comment_input > a {
   margin-top: 5px;
-  box-sizing: border-box; /* �꼫鍮꾩뿉 border�� padding�쓣 �룷�븿�떆�궎湲� �쐞�빐 */
-  width: calc(100% - 50px); /* 媛� �슂�냼�쓽 �꼫鍮꾨�� 50%濡� �꽕�젙�븯怨�, margin�룄 怨좊젮�븯�뿬 議곗젙 */
+  box-sizing: border-box;
+  width: calc(100% - 50px); 
 }
 
 .comment_input > a {
@@ -497,15 +513,18 @@ a {
   font-size: 0px;
   text-align: center;
   vertical-align: middle;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
   margin-left: 0px;
 }
 
 .mypage_comment_list > div {
-  border-bottom: 1px solid #111;
+  border-top: 1px solid #111;
+  border-right: 1px solid #111;
+  border-left: 1px solid #111;
   padding: 3px;
+}
+
+.mypage_comment_list > div:last-child {
+  border-bottom: 1px solid #111;
 }
 
 .mypage_comment_list > div > div {
@@ -527,4 +546,6 @@ a {
 .mypage_comment_list > .top {
   background: #eeeeee;
   font-weight: 900;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #111;
 }
