@@ -1,0 +1,99 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+    font-size: 10px;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.board_wrap {
+  margin: 5px;
+  padding: 5px;
+}
+
+.board_header > div {
+  display: inline-block;
+  background-color: #eeeeee;
+}
+
+.board_header > div > div {
+  display: inline-block;
+}
+
+.board_header > div a {
+  border: 1px solid black;
+  padding: 0 20px;
+}
+
+.board_banner{
+  border: 1px solid black;
+  margin-top: 5px;
+  text-align: center;
+  padding: 40px;
+  font-size: 25px;
+  background-color: #eeeeee;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* 열 방향으로 아이템을 배치 */
+  margin: 0px 0px 4px 4px
+}
+
+.container > div > div > a {
+  border: 1px solid black;
+  margin-right: 5px;
+  margin-top: 4px;
+}
+
+.row {
+  display: flex;
+}
+
+.item { 
+  flex: 1; /* 아이템이 가능한 한 크게 확장 */
+  display: flex;
+  justify-content: left; /* 내부 아이템을 가로 가운데 정렬 */
+  align-items: center;
+}
+
+.item_category {
+  color: red;
+  width: 50px;
+  text-align: center;
+}
+
+.item_title {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.container_wrap {
+  background-color: #eeeeee;
+  margin-top: 5px;
+  border: 1px solid black;
+  padding-top: 4px;
+}
+
+.container_title > a {
+  border: 1px solid black;
+  font-size: 15px;
+  padding: 0px 10px;
+}
+
+.container_title > a:first-child {
+  margin: 0px 0px 0px 4px;
+}
