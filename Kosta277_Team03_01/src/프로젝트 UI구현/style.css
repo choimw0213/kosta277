@@ -137,7 +137,7 @@ a.selected {
   border-top: 1px solid black;
   border-right: 1px solid black;
   border-left: 1px solid black;
-  padding: 8px;
+  padding: 9px;
 }
 
 .board_list > div:last-child {
@@ -146,7 +146,6 @@ a.selected {
 
 .board_list > div > div {
   display: inline-block;
-  font-size: 1.1em;
 }
 
 .board_list .seq, 
@@ -530,7 +529,7 @@ a.selected {
 .mypage_comment_list {
   margin: 5px;
   width: 100%;
-  font-size: 0px;
+  font-size: 1em;
   text-align: center;
   vertical-align: middle;
   margin-left: 0px;
@@ -540,7 +539,7 @@ a.selected {
   border-top: 1px solid #111;
   border-right: 1px solid #111;
   border-left: 1px solid #111;
-  padding: 3px;
+  padding: 9px;
 }
 
 .mypage_comment_list > div:last-child {
@@ -549,7 +548,6 @@ a.selected {
 
 .mypage_comment_list > div > div {
   display: inline-block;
-  font-size: 12px;
 }
 
 .mypage_comment_list .seq, 
@@ -560,7 +558,7 @@ a.selected {
 }
 
 .mypage_comment_list .title {
-  width: 60%;
+  width: 50%;
 }
 
 .mypage_comment_list > .top {
@@ -570,3 +568,12 @@ a.selected {
   border-bottom: 1px solid #111;
 }
 
+.my_info_wrap {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.my_info_wrap > div > a,
+.my_info_wrap > div > input {
+  background-color: #eeeeee;
+}
