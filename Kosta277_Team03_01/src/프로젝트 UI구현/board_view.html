@@ -78,15 +78,15 @@
             </div>
             <a class="comment_like" href="#">추천3</a>
             <a id="commentDelete" class="comment_delete" href="#">삭제</a>
-            <a class="comment_update" href="#">수정</a>
+            <a id="commentUpdate" class="comment_update" href="#">수정</a>
           </div>
           <div class="comment_content">드디어 끝났다~</div>
         </div>
       </div>
       
       <div class="comment_input">
-        <input type="text">
-        <a href="#">등록</a>
+        <input id="createCommentContent" type="text">
+        <a id="createComment" href="#">등록</a>
       </div>
 
     </div>
@@ -130,6 +130,19 @@
       
       document.getElementById('boardDelete').addEventListener('click', boardDeleteCheck);  
       document.getElementById('commentDelete').addEventListener('click', commentDeleteCheck);
+      
+      document.getElementById("createComment").addEventListener('click', checkCreateComment);
+      function checkCreateComment(event) {
+        event.preventDefault();
+        var commentContent = document.getElementById('createCommentContent');
+        if (commentContent.value === "") {
+          alert("내용을 입력하세요.");
+        } else {
+          commentContent.value = "";
+        }
+      }
+      
+      
     </script>
 
   </body>
