@@ -1,5 +1,10 @@
-<html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <title>KOSTA RPG</title>
+</head>
   <body>
     <div class="board_wrap">
       
@@ -15,11 +20,11 @@
       <div class="board_name">자유게시판</div>
       
       <div class="board_category">
-        <a href="#">전체</a>
-        <a href="#">잡담</a>
-        <a href="#">직업</a>
-        <a href="#">질문</a>
-        <a href="#">추천10이상</a>
+        <a href="#" class="link" onclick="selectLink(1)">전체</a>
+        <a href="#" class="link" onclick="selectLink(2)">잡담</a>
+        <a href="#" class="link" onclick="selectLink(3)">직업</a>
+        <a href="#" class="link" onclick="selectLink(4)">질문</a>
+        <a href="#" class="link" onclick="selectLink(5)">추천10이상</a>
       </div>
       
       <div class="board_list">
@@ -152,6 +157,28 @@
       </div>
         
     </div>
+      
+<script>
+    // 선택된 링크의 인덱스를 저장하는 변수
+    let selectedIndex = null;
+
+    // 페이지 로드 시 초기화 함수 호출
+    window.onload = function() {
+        selectLink(1); // 페이지 로드 시 링크 1 선택
+    };
+
+    // 링크를 클릭할 때 호출되는 함수
+    function selectLink(index) {
+        // 이전에 선택된 링크가 있다면 선택 해제
+        if (selectedIndex !== null) {
+            document.getElementsByClassName('link')[selectedIndex].classList.remove('selected');
+        }
+        // 새로운 링크 선택
+        selectedIndex = index - 1;
+        document.getElementsByClassName('link')[selectedIndex].classList.add('selected');
+    }
+</script>
+      
   </body>
 </html>
   

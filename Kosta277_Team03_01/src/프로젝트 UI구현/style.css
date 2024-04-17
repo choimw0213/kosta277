@@ -112,10 +112,14 @@ a {
   background-color: #eeeeee;
 }
 
+.selected {
+  background-color: yellow;
+}
+
 .board_category > a {
   border: 1px solid black;
   margin-top: 5px;
-  background-color: #eeeeee;
+  //background-color: #eeeeee;
   display: inline-block;
   width: 60px;
   text-align: center;
@@ -296,11 +300,15 @@ a {
   margin-top: 5px;
 }
 
-.board_like > a{
+.board_like > a {
   border: 1px solid black;
   padding: 0px 10px;
   font-size: 11px;
   background-color: #eeeeee;      
+}
+
+.board_like > a.active {
+  background-color: red;
 }
 
 .comment_list_tag > a {
@@ -350,6 +358,10 @@ a {
 .comment_date, 
 .comment_like {
   display: inline-block;
+}
+
+.comment_like.active {
+  background-color: red;
 }
 
 .comment_list > .best_comment,
@@ -484,6 +496,11 @@ a {
   height: 30px;
 }
 
+.user_info > div {
+  font-size: 12px;
+  color: red;
+}
+
 .mypage {
   border: 1px solid black;
   text-align: center;
@@ -554,3 +571,4 @@ a {
   margin-bottom: 5px;
   border-bottom: 1px solid #111;
 }
+

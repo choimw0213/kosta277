@@ -1,5 +1,10 @@
-<html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <title>KOSTA RPG</title>
+</head>
   <body>
     <div class="board_wrap">
       
@@ -30,12 +35,12 @@
         <div style="float: right">
           <a href="board_list_free.html">목록</a>
           <a href="board_edit.html">수정</a>
-          <a href="#">삭제</a>
+          <a id="boardDelete" href="#">삭제</a>
         </div>
       </div>
 
       <div class="board_like">
-        <a href="#">추천</a>
+        <a href="#" id="likeButton">추천</a>
       </div>
       
       <div class="comment_list_tag">
@@ -72,7 +77,7 @@
               <a class="comment_date">2024-04-02 13:43:15</a>
             </div>
             <a class="comment_like" href="#">추천3</a>
-            <a class="comment_delete" href="#">삭제</a>
+            <a id="commentDelete" class="comment_delete" href="#">삭제</a>
             <a class="comment_update" href="#">수정</a>
           </div>
           <div class="comment_content">드디어 끝났다~</div>
@@ -85,5 +90,47 @@
       </div>
 
     </div>
+    
+    <script>
+      var boardLikeButton = document.getElementById("likeButton");
+      boardLikeButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        boardLikeButton.classList.toggle("active");
+      });
+
+      var commentLikeButtons = document.querySelectorAll(".comment_like");
+      commentLikeButtons.forEach(function(commentLikeButton) {
+        commentLikeButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        commentLikeButton.classList.toggle("active");
+        });
+      });
+      
+      function boardDeleteCheck(event) {
+          event.preventDefault();
+          if (confirm("삭제하시겠습니까?")) {
+              console.log("삭제 완료");
+              alert("삭제 완료");
+              location.href = "board_list_free.html";
+          } else {
+              console.log("삭제 취소");
+          }
+      }
+
+      function commentDeleteCheck(event) {
+          event.preventDefault();
+          if (confirm("삭제하시겠습니까?")) {
+              console.log("삭제 완료");
+              alert("삭제 완료");
+              location.href = "board_view.html";
+          } else {
+              console.log("삭제 취소");
+          }
+      }
+      
+      document.getElementById('boardDelete').addEventListener('click', boardDeleteCheck);  
+      document.getElementById('commentDelete').addEventListener('click', commentDeleteCheck);
+    </script>
+
   </body>
 </html>

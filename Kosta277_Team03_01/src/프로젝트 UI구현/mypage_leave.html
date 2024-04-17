@@ -1,5 +1,10 @@
-<html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <title>KOSTA RPG</title>
+</head>
   <body>
     <div class="board_wrap">
       
@@ -55,12 +60,29 @@
         </div>        
         
         <div class="user_info">
-          <a href="#">확인</a>
-          <a href="main.html">취소</a>
+          <a id="ok" href="#">확인</a>
+          <a id="cancel" href="main.html">취소</a>
         </div>
         
       </div>
       
     </div>
+    
+    <script>
+      function check(event) {
+          event.preventDefault();
+          if (confirm("탈퇴하시겠습니까?")) {
+              console.log("탈퇴 완료");
+              alert("탈퇴 완료");
+              location.href = "main.html";
+          } else {
+              console.log("탈퇴 취소");
+          }
+      }
+
+      document.getElementById('ok').addEventListener('click', check);  
+
+    </script>
+    
   </body>
 </html>
