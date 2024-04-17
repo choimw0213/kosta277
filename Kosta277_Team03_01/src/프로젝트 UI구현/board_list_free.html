@@ -20,11 +20,11 @@
       <div class="board_name">자유게시판</div>
       
       <div class="board_category">
-        <a href="#" class="category">전체</a>
-        <a href="#" class="category">잡담</a>
-        <a href="#" class="category">직업</a>
-        <a href="#" class="category">질문</a>
-        <a href="#" class="category">추천10</a>
+        <a href="#" class="categoryButton">전체</a>
+        <a href="#" class="categoryButton">잡담</a>
+        <a href="#" class="categoryButton">직업</a>
+        <a href="#" class="categoryButton">질문</a>
+        <a href="#" class="categoryButton">추천10</a>
       </div>
       
       <div class="board_list">
@@ -40,7 +40,7 @@
         <div>
           <div class="seq">10</div>
           <div class="category">분류10</div>
-          <div class="title"><a href="#">글제목10</a></div>
+          <div class="title"><a href="board_view.html">글제목10</a></div>
           <div class="userid">김이름</div>
           <div class="date">240410</div>
           <div class="view">30</div>
@@ -49,7 +49,7 @@
         <div>
           <div class="seq">9</div>
           <div class="category">분류9</div>
-          <div class="title"><a href="#">글제목9</a></div>
+          <div class="title"><a href="board_view.html">글제목9</a></div>
           <div class="userid">김이름</div>
           <div class="date">240410</div>
           <div class="view">30</div>
@@ -58,7 +58,7 @@
         <div>
           <div class="seq">8</div>
           <div class="category">분류8</div>
-          <div class="title"><a href="#">글제목8</a></div>
+          <div class="title"><a href="board_view.html">글제목8</a></div>
           <div class="userid">김이름</div>
           <div class="date">240410</div>
           <div class="view">30</div>
@@ -67,7 +67,7 @@
         <div>
           <div class="seq">7</div>
           <div class="category">분류7</div>
-          <div class="title"><a href="#">글제목7</a></div>
+          <div class="title"><a href="board_view.html">글제목7</a></div>
           <div class="userid">김이름</div>
           <div class="date">240410</div>
           <div class="view">30</div>
@@ -76,7 +76,7 @@
         <div>
           <div class="seq">6</div>
           <div class="category">분류6</div>
-          <div class="title"><a href="#">글제목6</a></div>
+          <div class="title"><a href="board_view.html">글제목6</a></div>
           <div class="userid">김이름</div>
           <div class="date">240410</div>
           <div class="view">30</div>
@@ -85,7 +85,7 @@
         <div>
           <div class="seq">5</div>
           <div class="category">분류5</div>
-          <div class="title"><a href="#">글제목5</a></div>
+          <div class="title"><a href="board_view.html">글제목5</a></div>
           <div class="userid">김이름</div>
           <div class="date">240410</div>
           <div class="view">30</div>
@@ -94,7 +94,7 @@
         <div>
           <div class="seq">4</div>
           <div class="category">분류4</div>
-          <div class="title"><a href="#">글제목4</a></div>
+          <div class="title"><a href="board_view.html">글제목4</a></div>
           <div class="userid">김이름</div>
           <div class="date">240410</div>
           <div class="view">30</div>
@@ -103,7 +103,7 @@
         <div>
           <div class="seq">3</div>
           <div class="category">분류3</div>
-          <div class="title"><a href="#">글제목3</a></div>
+          <div class="title"><a href="board_view.html">글제목3</a></div>
           <div class="userid">김이름</div>
           <div class="date">240410</div>
           <div class="view">30</div>
@@ -112,7 +112,7 @@
         <div>
           <div class="seq">2</div>
           <div class="category">분류2</div>
-          <div class="title"><a href="#">글제목2</a></div>
+          <div class="title"><a href="board_view.html">글제목2</a></div>
           <div class="userid">김이름</div>
           <div class="date">240410</div>
           <div class="view">30</div>
@@ -121,7 +121,7 @@
         <div>
           <div class="seq">1</div>
           <div class="category">분류1</div>
-          <div class="title"><a href="#">글제목1</a></div>
+          <div class="title"><a href="board_view.html">글제목1</a></div>
           <div class="userid">김이름</div>
           <div class="date">240410</div>
           <div class="view">30</div>
@@ -154,7 +154,7 @@
           <option value="작성자">작성자</option>
         </select>
         <input class="search_word" type="text">
-        <a href="#">검색</a>
+        <a id="searchButton" href="#">검색</a>
       </div>
         
     </div>
@@ -166,13 +166,13 @@
     };
     function selectCategory(index) {
         if (selectedIndex !== null) {
-            document.getElementsByClassName('category')[selectedIndex].classList.remove('selected');
+            document.getElementsByClassName('categoryButton')[selectedIndex].classList.remove('selected');
         }
         selectedIndex = index - 1;
-        document.getElementsByClassName('category')[selectedIndex].classList.add('selected');
+        document.getElementsByClassName('categoryButton')[selectedIndex].classList.add('selected');
     }
 
-    let categories = document.querySelectorAll('.category');
+    let categories = document.querySelectorAll('.categoryButton');
     categories.forEach(function(category, index) {
         category.onclick = function() {
             selectCategory(index + 1);
@@ -221,7 +221,7 @@
     document.querySelector('.bt.prev').addEventListener('click', movePrevPage);
     document.querySelector('.bt.next').addEventListener('click', moveNextPage);
     document.querySelector('.bt.last').addEventListener('click', moveLastPage);
-
+    
     var toggleButtons = ['date', 'view', 'like'];
 
     toggleButtons.forEach(function(buttonId) {
@@ -245,6 +245,17 @@
         }
       });
     });
+  
+    document.getElementById("searchButton").addEventListener("click", function(event) {
+        event.preventDefault();
+        var searchInput = document.querySelector(".search_word");
+        if (searchInput.value === "") {
+            alert("검색어를 입력해주세요.");
+        } else {
+            console.log("검색어:", searchInput.value);
+        }
+    });
+  
 </script>
       
   </body>
