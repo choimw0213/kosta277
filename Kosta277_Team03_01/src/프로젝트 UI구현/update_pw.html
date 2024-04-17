@@ -20,12 +20,13 @@
 
         <div class="user_info_pw">
           <a>새 PW 입력</a>
-          <input type="password" value="abcd5678">
+          <input id="newPwInput" type="password" value="abcd5678">
         </div>        
         
         <div class="user_info_pw">
           <a>새 PW 확인</a>
-          <input type="password" value="abcd5678">
+          <input id="newPwCheck" type="password" value="abcd5678">
+          <div id="newPwErrMsg" class="newPwErrMsg"></div>
         </div>    
         
         <div class="user_info">
@@ -35,8 +36,26 @@
       </div>
       
     <script>
-      document.getElementById('ok').onclick = function(){
-        alert("비밀번호가 수정되었습니다.")
+      document.getElementById('newPwInput').oninput = checkNewPw;
+      document.getElementById('newPwCheck').oninput = checkNewPw;
+      
+      function checkNewPw(){
+        if(document.getElementById('newPwInput').value !== document.getElementById('newPwCheck').value){
+          newPwErrMsg.innerText = "일치하지 않습니다.";
+        } else {
+          newPwErrMsg.innerText = "";
+        }
+      }
+      
+      document.getElementById('ok').onclick = function(event){
+        event.preventDefault();
+        let newPwErrMsg = document.getElementById('newPwErrMsg').innerText;
+        if(newPwErrMsg === ""){
+          alert("비밀번호가 수정되었습니다.");
+          location.href = "login.html";
+        } else {
+          alert("다시 확인해주세요.");
+        }
       }
     </script>
 

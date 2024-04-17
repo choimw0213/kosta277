@@ -602,3 +602,8 @@ a.selected {
 .my_info_wrap > div > input {
   background-color: #eeeeee;
 }
+
+.newPwErrMsg {
+  font-size: 1em;
+  color: red;
+}
