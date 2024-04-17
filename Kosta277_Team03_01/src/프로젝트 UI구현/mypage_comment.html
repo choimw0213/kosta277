@@ -121,5 +121,52 @@
       </div>      
       
     </div>
+      
+    <script>
+      
+      let selectedIndexPage = 0;
+      function selectPage(index) {
+          document.getElementsByClassName('num')[selectedIndexPage].classList.remove('on');
+          selectedIndexPage = index - 1;
+          document.getElementsByClassName('num')[selectedIndexPage].classList.add('on');
+      }
+
+      let numbers = document.querySelectorAll('.num');
+      numbers.forEach(function(number, index) {
+          number.onclick = function() {
+              selectPage(index + 1);
+          };
+      });
+
+      function moveFirstPage() {
+          selectPage(1);
+      }
+
+      function movePrevPage() {
+          let currentPageIndex = selectedIndexPage + 1;
+          if (currentPageIndex > 1) {
+              selectPage(currentPageIndex - 1);
+          }
+      }
+
+      function moveNextPage() {
+          let totalPageCount = document.querySelectorAll('.num').length;
+          let currentPageIndex = selectedIndexPage + 1;
+          if (currentPageIndex < totalPageCount) {
+              selectPage(currentPageIndex + 1);
+          }
+      }
+
+      function moveLastPage() {
+          let totalPageCount = document.querySelectorAll('.num').length;
+          selectPage(totalPageCount);
+      }
+
+      document.querySelector('.bt.first').addEventListener('click', moveFirstPage);
+      document.querySelector('.bt.prev').addEventListener('click', movePrevPage);
+      document.querySelector('.bt.next').addEventListener('click', moveNextPage);
+      document.querySelector('.bt.last').addEventListener('click', moveLastPage);
+      
+    </script>
   </body>
 </html>
