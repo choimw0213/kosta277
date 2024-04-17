@@ -112,18 +112,18 @@ a {
   background-color: #eeeeee;
 }
 
-.selected {
-  background-color: yellow;
-}
-
 .board_category > a {
   border: 1px solid black;
   margin-top: 5px;
-  //background-color: #eeeeee;
+  background-color: #eeeeee;
   display: inline-block;
   width: 60px;
   text-align: center;
   vertical-align: middle;
+}
+
+a.selected {
+  background-color: yellow;
 }
 
 .board_list {
@@ -184,7 +184,7 @@ a {
 .board_page {
   text-align: center;
   font-size: 0;
-  margin-top: 25px;
+  margin-top: 2px;
 }
 
 .board_page a {
