@@ -18,29 +18,26 @@
           <a>PW 찾기</a>
         </div>
 
-        <div class="user_info">
-          <a>ID</a>
-          <input type="text" value="abcd1234">
+        <div class="user_info_pw">
+          <a>새 PW 입력</a>
+          <input type="password" value="abcd5678">
         </div>        
         
-        <div class="user_info">
-          <a>이름</a>
-          <input type="text" value="홍길동">
+        <div class="user_info_pw">
+          <a>새 PW 확인</a>
+          <input type="password" value="abcd5678">
         </div>    
-
-        <div class="user_info">
-          <a>전화번호</a>
-          <input type="text" value="01012341234">
-        </div>        
         
         <div class="user_info">
-          <a class="update_pw" href="update_pw.html">확인</a>
+          <a id="ok" href="login.html">확인</a>
           <a id="cancel" href="login.html">취소</a>
         </div>
-        
       </div>
       
     <script>
+      document.getElementById('ok').onclick = function(){
+        alert("비밀번호가 수정되었습니다.")
+      }
     </script>
 
     </div>

@@ -493,10 +493,33 @@ a.selected {
   height: 32px;
 }
 
+.user_info_pw > a,
+.user_info_pw > input {
+  display: inline-block;  
+  border: 1px solid black;
+  height: 20px;
+  width: 235px;
+  vertical-align: middle;
+  margin-top: 5px;
+  padding: 5px 0px;
+  font-size: 1em;
+}
+
+.user_info_pw > a {
+  width: 100px;
+}
+
+.user_info_pw > input {
+  padding-left: 5px;
+  height: 32px;
+}
+
 .user_info > div {
   color: red;
   font-size: 1em;
 }
+
+
 
 .mypage {  
   border: 1px solid black;
