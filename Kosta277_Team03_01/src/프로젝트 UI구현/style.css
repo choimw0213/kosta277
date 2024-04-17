@@ -498,18 +498,17 @@ a.selected {
   font-size: 1em;
 }
 
-.mypage {
+.mypage {  
   border: 1px solid black;
   text-align: center;
-  margin-top: 5px;
-  font-size: 20px;
-  padding: 10px;
+  padding: 50px;
+  font-size: 2.5em;
   background-color: #eeeeee;
 }
 
 .mypage_button {
   margin-top: 5px;
-  font-size: 0px;
+  font-size: 1em;
 }
 
 .mypage_button > a {
@@ -517,8 +516,7 @@ a.selected {
   border: 1px solid black;
   text-align: center;
   background-color: #eeeeee;
-  width: 60px;
-  font-size: 12px;
+  width: 80px;
   margin-left: 5px;
 }
 
@@ -566,6 +564,10 @@ a.selected {
   font-weight: 900;
   margin-bottom: 5px;
   border-bottom: 1px solid #111;
+}
+
+.user_info_title{
+	font-size: 0.7em;
 }
 
 .my_info_wrap {
