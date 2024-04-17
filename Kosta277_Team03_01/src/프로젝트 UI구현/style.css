@@ -4,7 +4,7 @@
 }
 
 html {
-    font-size: 1em;
+    font-size: 16px;
 }
 
 ul, li {
@@ -25,6 +25,7 @@ a {
 
 .board_header > div {
   display: inline-block;
+  margin-bottom: 15px;	
 }
 
 .board_header > div > div {
@@ -39,7 +40,6 @@ a {
 
 .board_banner{
   border: 1px solid black;
-  margin-top: 5px;
   text-align: center;
   padding: 80px;
   font-size: 3em;
@@ -56,7 +56,7 @@ a {
   border: 1px solid black;
   margin-right: 5px;
   margin-top: 5px;
-  padding: 30px;
+  padding: 25px;
 }
 
 .row {
@@ -85,7 +85,7 @@ a {
 
 .container_wrap {
   background-color: #eeeeee;
-  margin-top: 5px;
+  margin-top: 15px;
   border: 1px solid black;
   padding-top: 10px;
 }
@@ -102,7 +102,6 @@ a {
 
 .board_name {
   border: 1px solid black;
-  margin-top: 5px;
   text-align: center;
   padding: 50px;
   font-size: 2.5em;
@@ -248,7 +247,7 @@ a.selected {
   margin-top: 5px;
   text-align: center;
   padding: 2px;
-  font-size: 13px;
+  font-size: 1.5em;
   background-color: #eeeeee;
 }
 
@@ -257,7 +256,6 @@ a.selected {
   margin-top: 5px;
   text-align: right;
   padding: 2px;
-  font-size: 10px;
   background-color: #eeeeee;
 }
 
@@ -286,30 +284,27 @@ a.selected {
   margin-top: 5px;
   text-align: left;
   padding: 5px;
-  font-size: 11px;
   background-color: #eeeeee;  
 }
 
 .board_edit {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .board_edit > div > a {
   border: 1px solid black;
   padding: 0px 10px;
-  font-size: 11px;
   background-color: #eeeeee;    
 }
 
 .board_like {
   text-align: center;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .board_like > a {
   border: 1px solid black;
   padding: 0px 10px;
-  font-size: 11px;
   background-color: #eeeeee;      
 }
 
@@ -320,7 +315,6 @@ a.selected {
 .comment_list_tag > a {
   border: 1px solid black;
   padding: 0px 15px;
-  font-size: 11px;
   background-color: #eeeeee;
   margin-top: 5px;
 }
@@ -333,13 +327,12 @@ a.selected {
 .comment_update,
 .comment_content {
   border: 1px solid black;
-  font-size: 11px;
   background-color: #eeeeee;
 }
 
 .comment_list > div {
   padding: 5px;
-  margin-top: 5px;
+  margin-top: 7px;
 }
 
 .comment_userid, 
@@ -389,19 +382,20 @@ a.selected {
 .comment_input {
   display: inline-block;
   width: 100%;
+  font-size: 1em;
 }
 
 .comment_input > input,
 .comment_input > a {
-  margin-top: 5px;
+  margin-top: 10px;
   box-sizing: border-box;
-  width: calc(100% - 50px); 
+  width: calc(100% - 70px); 
+  font-size: 1em;
 }
 
 .comment_input > a {
   border: 1px solid black;
   padding: 0px 10px;
-  font-size: 11px;
   background-color: #eeeeee;
 }
 
