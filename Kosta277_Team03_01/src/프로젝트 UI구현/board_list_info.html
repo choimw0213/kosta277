@@ -29,13 +29,13 @@
       
       <div class="board_list">
         <div class="top">
-          <div class="seq">글번호</div>
-          <div class="category">분류</div>
-          <div class="title">제목</div>
-          <div class="userid">작성자</div>
-          <div class="date">작성일</div>
-          <div class="view">조회수</div>
-          <div class="like">추천수</div>
+          <div id="seq" class="seq">글번호</div>
+          <div id="category" class="category">분류</div>
+          <div id="title" class="title">제목</div>
+          <div id="userid" class="userid">작성자</div>
+          <div id="date" class="date">작성일▼</div>
+          <div id="view" class="view">조회수▼</div>
+          <div id="like" class="like">추천수▼</div>
         </div>
         <div>
           <div class="seq">10</div>
@@ -216,7 +216,31 @@
     document.querySelector('.bt.first').addEventListener('click', moveFirstPage);
     document.querySelector('.bt.prev').addEventListener('click', movePrevPage);
     document.querySelector('.bt.next').addEventListener('click', moveNextPage);
-    document.querySelector('.bt.last').addEventListener('click', moveLastPage);  
+    document.querySelector('.bt.last').addEventListener('click', moveLastPage);
+
+    var toggleButtons = ['date', 'view', 'like'];
+
+    toggleButtons.forEach(function(buttonId) {
+      var button = document.getElementById(buttonId);
+      button.addEventListener('click', function() {
+        toggleButtons.filter(function(id) {
+          return id !== buttonId;
+        }).forEach(function(id) {
+          var otherButton = document.getElementById(id);
+          otherButton.classList.remove('active');
+          otherButton.textContent = otherButton.textContent.replace('▲', '▼');
+        });
+
+        var isActive = button.classList.contains('active');
+        if (!isActive) {
+          button.textContent = button.textContent.replace('▼', '▲');
+          button.classList.add('active');
+        } else {
+          button.textContent = button.textContent.replace('▲', '▼');
+          button.classList.remove('active');
+        }
+      });
+    });
 </script>      
       
   </body>
