@@ -395,12 +395,12 @@ a.selected {
 
 .comment_input > a {
   border: 1px solid black;
-  padding: 0px 10px;
+  padding: 2px 15px;
   background-color: #eeeeee;
 }
 
 .comment_input > input {
-  padding: 0px 5px;
+  padding: 2px 0px;
 }
 
 .write_header {
@@ -457,8 +457,7 @@ a.selected {
 
 .user_info_wrap {
   text-align: center;
-  margin-top: 20px;
-  font-size: 0px;
+  margin-top: 250px;
 }
 
 .user_info_wrap > div > a,
@@ -470,7 +469,7 @@ a.selected {
   display: inline-block;
   border: 1px solid black;
   width: 340px;
-  font-size: 20px;
+  font-size: 2.5em;
   padding: 5px 0px;
 }
 
@@ -483,22 +482,21 @@ a.selected {
   vertical-align: middle;
   margin-top: 5px;
   padding: 5px 0px;
+  font-size: 1em;
 }
 
 .user_info > a {
   width: 70px;
-  font-size: 14px;
-  margin-right: 5px;  
 }
 
 .user_info > input {
   padding-left: 5px;
-  height: 30px;
+  height: 32px;
 }
 
 .user_info > div {
-  font-size: 12px;
   color: red;
+  font-size: 1em;
 }
 
 .mypage {
