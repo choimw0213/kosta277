@@ -1,177 +1,180 @@
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>KOSTA RPG</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>KOSTA RPG</title>
 </head>
-  <body>
-    <div class="board_wrap">
-      
-      <div class="board_header">
-        <div><a href="main.html">KOSTA RPG</a></div>
-      </div>
-      
-      <div class="user_info_wrap">
-        
-        <div class="user_info_title">
-          <a>회원가입</a>
-        </div>
-        
-        <div class="user_info">
-          <a>ID</a>
-          <input id="idInput" type="text" value="abcd1234">
-          <div id="idErrMsg"></div>          
-        </div>
-        
-        <div class="user_info">
-          <a>PW</a>
-          <input id="pwInput" type="password" value="abcd1234">
-          <div id="pwErrMsg"></div>
-        </div>
-        
-        <div class="user_info">
-          <a>이름</a>
-          <input id="nameInput" type="text" value="홍길동">
-          <div id="nameErrMsg"></div>
-        </div>    
+<body>
+	<div class="user_wrap">
+		<div class="user_info_wrap">
 
-        <div class="user_info">
-          <a>전화번호</a>
-          <input id="phonenumberInput" type="text" value="01012341234">
-          <div id="phonenumberErrMsg"></div>          
-        </div>        
-        
-        <div class="user_info">
-          <a>닉네임</a>
-          <input id="nicknameInput" type="text" value="펭도리">
-          <div id="nicknameErrMsg"></div>          
-        </div>        
-        
-        <div class="user_info">
-          <a href="#" id="ok">확인</a>
-          <a href="#" id="cancel">취소</a>
-        </div>
-        
-      </div>
+			<div class="user_header">
+				<div>
+					<a href="main.html">KOSTA RPG</a>
+				</div>
+			</div>
 
-    </div>
-    
-    <script>
-        function validateId() {
-            var idInput = document.getElementById('idInput');
-            var idErrMsg = document.getElementById('idErrMsg');
-            var id = idInput.value;
-          
-            var regex1 = /^[a-zA-Z]/;
-            var regex2 = /^[0-9a-zA-Z]{4,20}$/;
-            var regex3 = /^[0-9a-zA-Z]*$/;
-            if (!regex1.test(id)) {
-                idErrMsg.innerText = "첫 글자 영문자";
-            } else if (!regex2.test(id)) {
-                idErrMsg.innerText = "4~20글자 범위";
-            } else if (!regex3.test(id)) {
-                idErrMsg.innerText = "모든 글자 영문자 또는 숫자";
-            } else {
-                idErrMsg.innerText = "";
-            }
-        }
-      
-        function validatePw() {
-            var pwInput = document.getElementById('pwInput');
-            var pwErrMsg = document.getElementById('pwErrMsg');
-            var pw = pwInput.value;
+			<div class="user_info_title">
+				<a>회원가입</a>
+			</div>
 
-            var regex1 = /^.{8,20}$/;
-            var regex2 = /[A-Z]/;
-            var regex3 = /[a-z]/;
-            var regex4 = /\d/;
-          
-            var fulfilledConditions = 0;
-            if (regex2.test(pw)) fulfilledConditions++;
-            if (regex3.test(pw)) fulfilledConditions++;
-            if (regex4.test(pw)) fulfilledConditions++;
+			<div class="user_info">
+				<a>ID</a> <input id="idInput" type="text" value="abcd1234">
+				<div id="idErrMsg"></div>
+			</div>
 
-            if (!regex1.test(pw)) {
-                pwErrMsg.innerText = "8~20글자 범위";
-            } else if (fulfilledConditions < 2) {
-                pwErrMsg.innerText = "대문자, 소문자, 숫자 중 최소 2가지 이상";
-            } else {
-                pwErrMsg.innerText = "";
-            }
-        }      
+			<div class="user_info">
+				<a>PW</a> <input id="pwInput" type="password" value="abcd1234">
+				<div id="pwErrMsg"></div>
+			</div>
 
-        function validateName() {
-            var nameInput = document.getElementById('nameInput');
-            var nameErrMsg = document.getElementById('nameErrMsg');
-            var name = nameInput.value;
-          
-            var regex1 = /^[가-힣]{2,5}$/;
-            if (!regex1.test(name)) {
-                nameErrMsg.innerText = "2~5글자 한글";
-            } else {
-                nameErrMsg.innerText = "";
-            }
-        }
-      
-        function validatePhonenumber() {
-            var phonenumberInput = document.getElementById('phonenumberInput');
-            var phonenumberErrMsg = document.getElementById('phonenumberErrMsg');
-            var phonenumber = phonenumberInput.value;
-          
-            var regex1 = /^\d{11}$/;
-            var regex2 = /^010/;
+			<div class="user_info">
+				<a>이름</a> <input id="nameInput" type="text" value="홍길동">
+				<div id="nameErrMsg"></div>
+			</div>
 
-            if (!regex1.test(phonenumber)) {
-                phonenumberErrMsg.innerText = "11글자 숫자";
-            } else if (!regex2.test(phonenumber)) {
-                phonenumberErrMsg.innerText = "010으로 시작";
-            } else {
-                phonenumberErrMsg.innerText = "";
-            }
-        }
-      
-        function validateNickname() {
-            var nicknameInput = document.getElementById('nicknameInput');
-            var nicknameErrMsg = document.getElementById('nicknameErrMsg');
-            var nickname = nicknameInput.value;
-          
-            var regex1 = /^[가-힣]{2,10}$/;
-            if (!regex1.test(nickname)) {
-                nicknameErrMsg.innerText = "2~10글자 한글";
-            } else {
-                nicknameErrMsg.innerText = "";
-            }
-        }
+			<div class="user_info">
+				<a>전화번호</a> <input id="phonenumberInput" type="text"
+					value="01012341234">
+				<div id="phonenumberErrMsg"></div>
+			</div>
 
-        idInput.oninput = validateId;
-        pwInput.oninput = validatePw;
-        nameInput.oninput = validateName;
-        phonenumberInput.oninput = validatePhonenumber;
-        nicknameInput.oninput = validateNickname;
-      
-        function check(event) {
-            event.preventDefault();
-            var idErrMsg = document.getElementById('idErrMsg').innerText;
-            var pwErrMsg = document.getElementById('pwErrMsg').innerText;
-            var nameErrMsg = document.getElementById('nameErrMsg').innerText;
-            var phonenumberErrMsg = document.getElementById('phonenumberErrMsg').innerText;
-            var nicknameErrMsg = document.getElementById('nicknameErrMsg').innerText;  
+			<div class="user_info">
+				<a>닉네임</a> <input id="nicknameInput" type="text" value="펭도리">
+				<div id="nicknameErrMsg"></div>
+			</div>
 
-            if (idErrMsg === "" && pwErrMsg === "" && nameErrMsg === "" && phonenumberErrMsg === "" && nicknameErrMsg === "") {
-              location.href = "login.html";
-              alert("회원가입 완료");
-            } else {
-              alert("다시 확인해주세요.");
-            }
-        }
+			<div class="user_info">
+				<a href="#" id="ok">확인</a> <a href="#" id="cancel">취소</a>
+			</div>
 
-        document.getElementById('ok').addEventListener('click', check);
-        document.getElementById('cancel').addEventListener('click', function(event) {
-            event.preventDefault();
-            history.back();
-        });
-    </script>
-    
-  </body>
+		</div>
+
+	</div>
+
+	<script>
+		function validateId() {
+			var idInput = document.getElementById('idInput');
+			var idErrMsg = document.getElementById('idErrMsg');
+			var id = idInput.value;
+
+			var regex1 = /^[a-zA-Z]/;
+			var regex2 = /^[0-9a-zA-Z]{4,20}$/;
+			var regex3 = /^[0-9a-zA-Z]*$/;
+			if (!regex1.test(id)) {
+				idErrMsg.innerText = "첫 글자 영문자";
+			} else if (!regex2.test(id)) {
+				idErrMsg.innerText = "4~20글자 범위";
+			} else if (!regex3.test(id)) {
+				idErrMsg.innerText = "모든 글자 영문자 또는 숫자";
+			} else {
+				idErrMsg.innerText = "";
+			}
+		}
+
+		function validatePw() {
+			var pwInput = document.getElementById('pwInput');
+			var pwErrMsg = document.getElementById('pwErrMsg');
+			var pw = pwInput.value;
+
+			var regex1 = /^.{8,20}$/;
+			var regex2 = /[A-Z]/;
+			var regex3 = /[a-z]/;
+			var regex4 = /\d/;
+
+			var fulfilledConditions = 0;
+			if (regex2.test(pw))
+				fulfilledConditions++;
+			if (regex3.test(pw))
+				fulfilledConditions++;
+			if (regex4.test(pw))
+				fulfilledConditions++;
+
+			if (!regex1.test(pw)) {
+				pwErrMsg.innerText = "8~20글자 범위";
+			} else if (fulfilledConditions < 2) {
+				pwErrMsg.innerText = "대문자, 소문자, 숫자 중 최소 2가지 이상";
+			} else {
+				pwErrMsg.innerText = "";
+			}
+		}
+
+		function validateName() {
+			var nameInput = document.getElementById('nameInput');
+			var nameErrMsg = document.getElementById('nameErrMsg');
+			var name = nameInput.value;
+
+			var regex1 = /^[가-힣]{2,5}$/;
+			if (!regex1.test(name)) {
+				nameErrMsg.innerText = "2~5글자 한글";
+			} else {
+				nameErrMsg.innerText = "";
+			}
+		}
+
+		function validatePhonenumber() {
+			var phonenumberInput = document.getElementById('phonenumberInput');
+			var phonenumberErrMsg = document
+					.getElementById('phonenumberErrMsg');
+			var phonenumber = phonenumberInput.value;
+
+			var regex1 = /^\d{11}$/;
+			var regex2 = /^010/;
+
+			if (!regex1.test(phonenumber)) {
+				phonenumberErrMsg.innerText = "11글자 숫자";
+			} else if (!regex2.test(phonenumber)) {
+				phonenumberErrMsg.innerText = "010으로 시작";
+			} else {
+				phonenumberErrMsg.innerText = "";
+			}
+		}
+
+		function validateNickname() {
+			var nicknameInput = document.getElementById('nicknameInput');
+			var nicknameErrMsg = document.getElementById('nicknameErrMsg');
+			var nickname = nicknameInput.value;
+
+			var regex1 = /^[가-힣]{2,10}$/;
+			if (!regex1.test(nickname)) {
+				nicknameErrMsg.innerText = "2~10글자 한글";
+			} else {
+				nicknameErrMsg.innerText = "";
+			}
+		}
+
+		idInput.oninput = validateId;
+		pwInput.oninput = validatePw;
+		nameInput.oninput = validateName;
+		phonenumberInput.oninput = validatePhonenumber;
+		nicknameInput.oninput = validateNickname;
+
+		function check(event) {
+			event.preventDefault();
+			var idErrMsg = document.getElementById('idErrMsg').innerText;
+			var pwErrMsg = document.getElementById('pwErrMsg').innerText;
+			var nameErrMsg = document.getElementById('nameErrMsg').innerText;
+			var phonenumberErrMsg = document
+					.getElementById('phonenumberErrMsg').innerText;
+			var nicknameErrMsg = document.getElementById('nicknameErrMsg').innerText;
+
+			if (idErrMsg === "" && pwErrMsg === "" && nameErrMsg === ""
+					&& phonenumberErrMsg === "" && nicknameErrMsg === "") {
+				location.href = "login.html";
+				alert("회원가입 완료");
+			} else {
+				alert("다시 확인해주세요.");
+			}
+		}
+
+		document.getElementById('ok').addEventListener('click', check);
+		document.getElementById('cancel').addEventListener('click',
+				function(event) {
+					event.preventDefault();
+					history.back();
+				});
+	</script>
+
+</body>
 </html>
