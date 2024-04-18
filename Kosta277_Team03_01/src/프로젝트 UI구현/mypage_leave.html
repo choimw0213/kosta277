@@ -31,16 +31,14 @@
       <div class="my_info_wrap">
         
         <div class="user_info_title">
-          <a>회원탈퇴</a>
+          <a id="user_info_title_exit" class="user_info_title_exit">회원탈퇴</a>
         </div>
         
         <div class="user_info_warning">
-          <div>
-            <a>[주의사항]</a><br>
-            <a>회원탈퇴를 진행하기 전에 아래 사항을 확인해주세요.</a><br>
-            <a>회원탈퇴가 완료되면 모든 활동내역이 삭제됩니다.</a><br>
-            <a>계속 회원탈퇴 진행을 원하시면 체크박스를 선택 후 탈퇴 버튼을 누르세요.</a><br>          
-          </div>
+          <a>[주의사항]</a><br>
+          <a>회원탈퇴를 진행하기 전에 아래 사항을 확인해주세요.</a><br>
+          <a>회원탈퇴가 완료되면 모든 활동내역이 삭제됩니다.</a><br>
+          <a>계속 진행을 원하시면 아래 탈퇴 버튼을 누르세요.</a><br>          
         </div>
         
         <input type="checkbox" id="myCheckbox"><a> 주의사항을 확인했습니다.</a>
@@ -52,6 +50,17 @@
       </div>
     </div>
     
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal_id">아이디 : abcd****</div>
+        <label class="modal_pw_label" for="password">비밀번호 : </label>
+        <input class="modal_pw_input"type="password" id="password" required>
+        <div id="modalMessage" class="modalMessage"></div>
+        <button id="confirmBtn" class="confirmBtn">확인</button>
+        <button id="cancelBtn" class="cancelBtn">취소</button>
+      </div>
+    </div>
+    
     <script>
       var myCheckbox = document.getElementById('myCheckbox');
       var exitButton = document.getElementById('exit');
@@ -59,11 +68,30 @@
       exitButton.addEventListener('click', exit);
       function exit() {
         if (myCheckbox.checked) {
-          alert("TRUE");          
+          document.getElementById('myModal').style.display = 'block';
         } else {
-          alert("FALSE");
+          alert("주의사항 미확인");
         }
       }
+      
+      document.getElementById('confirmBtn').addEventListener('click', function () {
+        var password = document.getElementById('password').value;
+        if(password !== 'abcd1234'){
+          document.getElementById('modalMessage').innerText = "비밀번호가 일치하지 않습니다.";
+        } else {
+          document.getElementById('modalMessage').innerText = "";
+          alert("회원탈퇴 완료");
+          location.href = "main.html";
+        }
+      });
+  
+      document.getElementById('cancelBtn').addEventListener('click', function () {
+        document.getElementById('password').value = "";
+        document.getElementById('modalMessage').innerText = "";
+        document.getElementById('myModal').style.display = 'none';
+      });
+
     </script>
+    
   </body>
 </html>

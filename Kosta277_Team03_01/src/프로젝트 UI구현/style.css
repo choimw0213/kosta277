@@ -631,3 +631,48 @@ a.selected {
 .modalMessage {
   color: red;
 }
+
+.confirmBtn {
+  padding: 0px 10px;
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+.cancelBtn {
+  padding: 0px 10px;
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+.modal_id {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.modal_pw_label {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.modal_pw_input {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.user_info_warning {
+  color: red;
+  border: 1px solid black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #eeeeee;
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+#user_info_title_exit {
+  width: 420px;
+}
