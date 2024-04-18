@@ -25,8 +25,13 @@
 			</div>
 
 			<div class="user_info">
-				<a>PW</a> <input id="pwInput" type="password" value="abcd1234">
+				<a>PW 입력</a> <input id="pwInput" type="password" value="abcd1234">
 				<div id="pwErrMsg"></div>
+			</div>
+          
+			<div class="user_info">
+				<a>PW 확인</a> <input id="pwCheckInput" type="password" value="abcd1234">
+				<div id="pwCheckErrMsg"></div>
 			</div>
 
 			<div class="user_info">
@@ -100,6 +105,21 @@
 			}
 		}
 
+		function validatePwCheck() {
+            var pwInput = document.getElementById('pwInput');
+			var pwErrMsg = document.getElementById('pwErrMsg');
+			var pw = pwInput.value;
+			var pwCheckInput = document.getElementById('pwCheckInput');
+			var pwCheckErrMsg = document.getElementById('pwCheckErrMsg');
+			var pwCheck = pwCheckInput.value;
+
+			if (pwCheck !== pw) {
+				pwCheckErrMsg.innerText = "비밀번호가 다릅니다.";
+			} else {
+				pwCheckErrMsg.innerText = "";
+			}
+		}
+
 		function validateName() {
 			var nameInput = document.getElementById('nameInput');
 			var nameErrMsg = document.getElementById('nameErrMsg');
@@ -146,6 +166,8 @@
 
 		idInput.oninput = validateId;
 		pwInput.oninput = validatePw;
+        pwInput.oninput = validatePwCheck;
+        pwCheckInput.oninput = validatePwCheck;
 		nameInput.oninput = validateName;
 		phonenumberInput.oninput = validatePhonenumber;
 		nicknameInput.oninput = validateNickname;
