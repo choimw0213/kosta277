@@ -30,37 +30,67 @@
 
       <div class="my_info_wrap">
         
+        <div class="user_info_title">
+          <a>내 정보</a>
+        </div>
+        
         <div class="user_info">
           <a>ID</a>
-          <input type="text" value="abcd1234">
+          <input type="text" value="abcd****" readonly>
         </div>
-        
-        <div class="user_info">
-          <a>PW</a>
-          <input type="password" value="abcd1234">
-        </div>
-        
+                
         <div class="user_info">
           <a>이름</a>
-          <input type="text" value="홍길동">
+          <input type="text" value="홍**" readonly>
         </div>    
 
         <div class="user_info">
           <a>전화번호</a>
-          <input type="text" value="01012341234">
+          <input type="text" value="0101234****" readonly>
         </div>        
         
         <div class="user_info">
           <a>닉네임</a>
-          <input type="text" value="펭도리">
+          <input type="text" value="펭도리" readonly>
         </div>        
         
         <div class="user_info">
-          <a href="mypage_edit.html">수정</a>
+          <a id="myPageEdit" href="mypage_edit.html">수정</a>
         </div>
         
       </div>
       
     </div>
+    
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div>아이디 : abcd****</div>
+        <label for="password">비밀번호 : </label>
+        <input type="password" id="password" required><div id="modalMessage" class="modalMessage"></div>
+        <button id="confirmBtn" class="confirmBtn">확인</button>
+        <button id="cancelBtn" class="cancelBtn">취소</button>
+      </div>
+    </div>
+    
+<script>
+  document.getElementById('myPageEdit').addEventListener('click', function (event) {
+    event.preventDefault();
+    document.getElementById('myModal').style.display = 'block';
+  });
+
+  document.getElementById('confirmBtn').addEventListener('click', function () {
+    var password = document.getElementById('password').value;
+    if(password !== 'abcd1234'){
+      document.getElementById('modalMessage').innerText = "비밀번호가 일치하지 않습니다.";
+    } else {
+      document.getElementById('modalMessage').innerText = "";
+      location.href = "mypage_edit.html";
+    }
+  });
+  
+  document.getElementById('cancelBtn').addEventListener('click', function () {
+    document.getElementById('myModal').style.display = 'none';
+  });
+</script>
   </body>
 </html>
