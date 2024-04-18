@@ -89,6 +89,18 @@
         <a id="createComment" href="#">등록</a>
       </div>
 
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal_id">아이디 : abcd****</div>
+          <label class="modal_pw_label" for="password">비밀번호 : </label>
+          <input class="modal_pw_input"type="password" id="password" required>
+          <div id="modalMessage" class="modalMessage"></div>
+          <button id="confirmBtn" class="confirmBtn">확인</button>
+          <button id="cancelBtn" class="cancelBtn">취소</button>
+        </div>
+      </div>
+      
+      
     </div>
     
     <script>
@@ -108,24 +120,12 @@
       
       function boardDeleteCheck(event) {
           event.preventDefault();
-          if (confirm("삭제하시겠습니까?")) {
-              console.log("삭제 완료");
-              alert("삭제 완료");
-              location.href = "board_list_free.html";
-          } else {
-              console.log("삭제 취소");
-          }
+          document.getElementById('myModal').style.display = 'block';
       }
 
       function commentDeleteCheck(event) {
           event.preventDefault();
-          if (confirm("삭제하시겠습니까?")) {
-              console.log("삭제 완료");
-              alert("삭제 완료");
-              location.href = "board_view.html";
-          } else {
-              console.log("삭제 취소");
-          }
+          document.getElementById('myModal').style.display = 'block';
       }
       
       document.getElementById('boardDelete').addEventListener('click', boardDeleteCheck);  
@@ -142,6 +142,22 @@
         }
       }
       
+      document.getElementById('confirmBtn').addEventListener('click', function () {
+        var password = document.getElementById('password').value;
+        if(password !== 'abcd1234'){
+          document.getElementById('modalMessage').innerText = "비밀번호가 일치하지 않습니다.";
+        } else {
+          document.getElementById('modalMessage').innerText = "";
+          alert("삭제 완료");
+          location.href = "main.html";
+        }
+      });
+  
+      document.getElementById('cancelBtn').addEventListener('click', function () {
+        document.getElementById('password').value = "";
+        document.getElementById('modalMessage').innerText = "";
+        document.getElementById('myModal').style.display = 'none';
+      });
       
     </script>
 
