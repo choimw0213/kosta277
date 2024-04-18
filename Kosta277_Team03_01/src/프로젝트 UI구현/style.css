@@ -454,9 +454,37 @@ a.selected {
   margin-right: 0px;
 }
 
+
+/* 반응형 웹 디자인 */
+
+/* 전체 페이지 스타일 */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 로그인 폼 스타일 */
+.user_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .user_info_wrap {
   text-align: center;
-  margin-top: 250px;
+    width: 350px;
+    padding: 20px;
+}
+
+.user_header {
+  display: inline-block;
+  width: 340px;
+  border: 1px solid black;
+  padding: 5px 0px;
+  background-color: #eeeeee;
+  font-size: 2em;
+  text-align: center;
 }
 
 .user_info_wrap > div > a,
@@ -464,13 +492,15 @@ a.selected {
   background-color: #eeeeee;
 }
 
-.user_info_title > a {
-  display: inline-block;
+.user_info_title >a {
+   display: inline-block;
   border: 1px solid black;
   width: 340px;
   font-size: 2.5em;
   padding: 5px 0px;
+  margin-top: 5px;
 }
+
 
 .user_info > a,
 .user_info > input {
@@ -518,6 +548,16 @@ a.selected {
   color: red;
   font-size: 1em;
 }
+
+
+/* 화면 크기가 작을 때(모바일 등) 로그인 폼 스타일 */
+@media only screen and (max-width: 600px) {
+    .user_info_wrap {
+        width: 90%;
+    }
+}
+
+
 
 
 
