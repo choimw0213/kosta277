@@ -37,12 +37,28 @@
 잘 확인하시고 신청해주세요</textarea>
         
         <div class="write_button">
-          <a href="board_view.html">수정완료</a>
-          <a href="board_view.html">취소</a>
+          <a id="ok" href="board_view.html">수정완료</a>
+          <a id="cancel" href="board_view.html">취소</a>
         </div>
         
       </div>
 
     </div>
+    
+  <script>
+    document.getElementById("ok").addEventListener('click', checkBoardWrite);
+    function checkBoardWrite(event) {
+      event.preventDefault();
+      var boardTitle = document.querySelector('.write_title');
+      var boardContent = document.querySelector('.write_content');
+      if (boardTitle.value === "") {
+        alert("제목을 입력하세요.");
+      } else if (boardContent.value === "") {
+        alert("내용을 입력하세요.");
+      } else {
+        location.href = "board_list_free.html";
+      }
+    } 
+  </script>
   </body>
 </html>
