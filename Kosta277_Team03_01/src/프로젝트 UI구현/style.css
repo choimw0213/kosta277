@@ -29,7 +29,7 @@ a {
   width: 150px;
   height: 20px;
   border: 1px solid black;
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 
 .board_header > div {
@@ -38,8 +38,10 @@ a {
 
 .board_header > div > div {
   display: inline-block;
-  border: 1px solid black;
-  background-color: #eeeeee;
+  border: 1px solid black;  
+  border-radius: 5px;
+  background-color: black;
+  color: white;
   padding: 0 10px;
 }
 
@@ -48,59 +50,76 @@ a {
 	margin-top: 5px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  margin: 5 0 5 5px;
-}
+/* 스타일.css */
 
-.container > div > div > a {
-  border: 1px solid black;
-  margin-right: 5px;
-  margin-top: 5px;
-  padding: 5px;
-}
-
-.row {
-  display: flex;
-}
-
-.item { 
-  flex: 1;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-
-.item_category {
-  width: 80px;
-  text-align: center;
-}
-
-.item_title {
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
+/* 전체 페이지 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
 }
 
 .container_wrap {
-  background-color: #eeeeee;
-  margin-top: 15px;
-  border: 1px solid black;
-  padding-top: 10px;
+   max-width: 1300px;
+   margin: 20px auto;
+   padding: 20 20 20 0px;
+   background-color: #fff;
+   border-radius: 10px;
+   border: 1px solid black;
 }
 
-.container_title > a {
-  border: 1px solid black;
-  font-size: 1.5em;
-  padding: 5px 15px;
+.container_title {
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-size: 1.5em;
 }
 
-.container_title > a:first-child {
-  margin: 0 0 4 4px;
+.container_title a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.item {
+	flex: 1;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid black;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+
+.item_category {
+    display: inline-block;
+    margin-left: 5px;
+    padding: 5px 10px;
+    background-color: #333;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.item_title {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    
+    color: #333;
+    text-decoration: none;
+}
+
 
 .board_name {
   text-align: left;
@@ -111,7 +130,7 @@ a {
 .board_category > a {
   border: 1px solid black;
   margin-top: 5px;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   display: inline-block;
   width: 85px;
   text-align: center;
@@ -122,7 +141,7 @@ a {
 
 a.selected {
   background-color: black;
-  color: white;
+  color: white;s
 }
 
 .board_list {
@@ -135,6 +154,7 @@ a.selected {
 }
 
 .board_list > div {
+  background-color: white;
   border-top: 1px solid black;
   border-right: 1px solid black;
   border-left: 1px solid black;
@@ -163,7 +183,7 @@ a.selected {
 }
 
 .board_list > .top {
-  background: #eeeeee;
+  background: #ffffff;
   font-weight: 700;
   margin-bottom: 5px;
   border-bottom: 1px solid black;  
@@ -173,7 +193,7 @@ a.selected {
   border: 1px solid black;
   float: right;
   padding: 0px 20px;
-  background: #eeeeee;
+  background: #ffffff;
 }
 
 .board_page {
@@ -193,7 +213,7 @@ a.selected {
   line-height: 100%;
   text-decoration: none;
   color: inherit;
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 
 .board_page a.bt {
@@ -234,7 +254,7 @@ a.selected {
   border: 1px solid black;
   padding: 3px 15px;
   font-size: 1em;
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 
 /*
@@ -249,7 +269,7 @@ a.selected {
   text-align: center;
   padding: 2px;
   font-size: 1.5em;
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 
 .board_info {
@@ -257,7 +277,7 @@ a.selected {
   margin-top: 5px;
   text-align: right;
   padding: 2px;
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 
 .board_info > div {
@@ -285,7 +305,7 @@ a.selected {
   margin-top: 5px;
   text-align: left;
   padding: 5px;
-  background-color: #eeeeee;  
+  background-color: #ffffff;  
 }
 
 .board_edit {
@@ -295,7 +315,7 @@ a.selected {
 .board_edit > div > a {
   border: 1px solid black;
   padding: 0px 10px;
-  background-color: #eeeeee;    
+  background-color: #ffffff;    
 }
 
 .board_like {
@@ -306,7 +326,7 @@ a.selected {
 .board_like > a {
   border: 1px solid black;
   padding: 0px 10px;
-  background-color: #eeeeee;      
+  background-color: #ffffff;      
 }
 
 .board_like > a.active {
@@ -316,7 +336,7 @@ a.selected {
 .comment_list_tag > a {
   border: 1px solid black;
   padding: 0px 15px;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   margin-top: 5px;
 }
 
@@ -328,7 +348,7 @@ a.selected {
 .comment_update,
 .comment_content {
   border: 1px solid black;
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 
 .comment_list > div {
@@ -397,7 +417,7 @@ a.selected {
 .comment_input > a {
   border: 1px solid black;
   padding: 2px 15px;
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 
 .comment_input > input {
@@ -407,7 +427,7 @@ a.selected {
 .write_header {
   border: 1px solid black;
   font-size: 20px;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   margin-top: 5px;
   text-align: center;
   padding: 10px;
@@ -444,7 +464,7 @@ a.selected {
   float: right;
   border: 1px solid black;
   font-size: 11px;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   text-align: center;
   width: 60px;
   margin-right: 5px;
@@ -479,14 +499,14 @@ body {
   width: 340px;
   height: 50px;
   border: 1px solid black;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   font-size: 2em;
   text-align: center;
 }
 
 .user_info_wrap > div > a,
 .user_info_wrap > div > input {
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 
 .user_info_title >a {
@@ -568,7 +588,7 @@ body {
   display: inline-block;
   border: 1px solid black;
   text-align: center;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   margin-top: 5px;
   width: 85px;
   vertical-align: middle;
@@ -590,6 +610,7 @@ body {
 }
 
 .mypage_comment_list > div {
+  background-color: white;
   border-top: 1px solid #111;
   border-right: 1px solid #111;
   border-left: 1px solid #111;
@@ -616,7 +637,7 @@ body {
 }
 
 .mypage_comment_list > .top {
-  background: #eeeeee;
+  background: #ffffff;
   font-weight: 900;
   margin-bottom: 5px;
   border-bottom: 1px solid #111;
@@ -634,7 +655,7 @@ body {
 
 .my_info_wrap > div > a,
 .my_info_wrap > div > input {
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 
 .newPwErrMsg {
@@ -703,7 +724,7 @@ body {
   border: 1px solid black;
   margin-top: 5px;
   margin-bottom: 5px;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   text-align: center;
   width: 400px;
   margin: 0 auto;
@@ -721,5 +742,5 @@ body {
   
   
 
-  
+
 }
