@@ -330,7 +330,7 @@ a.selected {
 }
 
 .board_like > a.active {
-  background-color: rgb(250, 116, 138);
+  background-color: rgb(250, 115, 140);
 }
 
 .comment_list_tag > a {
@@ -381,14 +381,14 @@ a.selected {
 }
 
 .comment_like.active {
-  background-color: rgb(250, 116, 138);
+  background-color: rgb(250, 115, 140);
 }
 
 .comment_list > .best_comment,
 .best_comment > div,
 .best_comment > div > a,
 .best_comment > div > div > a {
-  background-color: rgb(253, 223, 229);
+  background-color: rgb(250, 220, 230);
 }
 
 .comment_list > div > div > div,
@@ -739,8 +739,23 @@ body {
 
 #modalValue {
   display: none;
-  
-  
+}
 
+.find_id,
+.find_pw,
+.sign_up {
+  background-color: rgb(245, 255, 220) !important;
+  background-color: #cccccc !important;
+}
 
+.user_info_login_ok,
+.find_id_ok,
+.update_pw,
+.update_pw_ok,
+.join_ok,
+.mypage_info_ok,
+.mypage_edit_ok,
+.mypage_leave_ok {
+  background-color: black !important;
+  color: white;
 }
