@@ -40,10 +40,12 @@ a {
   display: inline-block;
   border: 1px solid black;
   background-color: #eeeeee;
+  padding: 0 10px;
 }
 
 .board_banner{
-	height: 548px;
+	height: 350px;
+	margin-top: 5px;
 }
 
 .container {
