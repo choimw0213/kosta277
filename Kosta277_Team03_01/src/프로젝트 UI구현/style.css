@@ -26,8 +26,8 @@ a {
 .board_header > div > a {
   display: inline-block;
   margin-bottom: 15px;	
-  width: 347px;
-  height: 50px;
+  width: 150px;
+  height: 20px;
   border: 1px solid black;
   background-color: #eeeeee;
 }
