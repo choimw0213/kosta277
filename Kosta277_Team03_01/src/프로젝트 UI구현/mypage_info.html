@@ -89,6 +89,9 @@
       document.getElementById('modalMessage').innerText = "비밀번호가 일치하지 않습니다.";
     } else {
       document.getElementById('modalMessage').innerText = "";
+      document.getElementById('password').value = "";
+      document.getElementById('modalMessage').innerText = "";
+      document.getElementById('myModal').style.display = 'none';
       location.href = "mypage_edit.html";
     }
   });

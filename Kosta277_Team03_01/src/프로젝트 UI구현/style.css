@@ -715,3 +715,7 @@ body {
 #user_info_title_exit {
   width: 420px;
 }
+
+#modalValue {
+  display: none;
+}

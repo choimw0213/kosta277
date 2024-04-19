@@ -1,0 +1,183 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>KOSTA RPG</title>
+    <style>
+    	img{width: 100%; height: 100%;}
+  </style>
+</head>
+  <body>
+    <div class="board_wrap">
+      
+      <div class="board_header">
+        <div><a href="main_login.html"><img src="./image/kosta_rpg_logo_6.png" alt="KOSTA RPG"
+        ></a></div>
+        <div style="float: right">
+          <div><a>펭도리님, 반갑습니다.</a></div>
+          <div><a href="mypage_info.html">마이페이지</a></div>
+          <div><a href="main.html">로그아웃</a></div>
+        </div>
+      </div>
+
+      <div class="board_name">자유게시판</div>
+      
+      <div class="board_title">직업별 티어 정리표</div>
+      
+      <div class="board_info">
+        <div>분류 : 직업</div>
+        <div>작성자 : 동동화가</div>
+        <div>작성일 : 2024-04-01 22:00:00</div>
+        <div>조회수 : 428437</div>
+        <div>추천수 : 455</div>
+      </div>
+      
+      <div class="board_content">
+        이 티어는 북미에서 사용하는 딜미터기 기준으로 작성한 것이기 때문에, 우리나라의 현 직업 밸런스와 상이한 부분이 있을수도 있습니다.<br><br>1위 그믐소울<br>2위 오의배마<br>3위 강무데헌<br>4위 충단인파<br>5위 황제알카<br>6위 만월소울<br>7위 사시건슬<br>8위 점화소서<br>9위 달소리퍼<br>10위 죽습호크
+      </div>
+
+      <div class="board_edit">
+        <div style="float: right">
+          <a href="board_list_free.html">목록</a>
+          <a href="board_edit.html">수정</a>
+          <a id="boardDelete" href="#">삭제</a>
+        </div>
+      </div>
+
+      <div class="board_like">
+        <a href="#" id="likeButton">추천</a>
+      </div>
+      
+      <div class="comment_list_tag">
+        <a>댓글</a>
+      </div>
+            
+      <div class="comment_list">
+        <div class="best_comment">
+          <div>
+            <div>
+              <a class="comment_userid">나칸드라</a>
+              <a class="comment_date">2024-04-02 10:01:47</a>
+            </div>
+            <a class="comment_like" href="#">추천5</a>
+          </div>
+          <div class="comment_content">확인했습니다. 감사합니다.</div>
+        </div>
+        
+        <div>
+          <div>
+            <div>
+              <a class="comment_userid">나칸드라</a>
+              <a class="comment_date">2024-04-02 10:01:47</a>
+            </div>
+            <a class="comment_like" href="#">추천5</a>
+          </div>
+          <div class="comment_content">확인했습니다. 감사합니다.</div>
+        </div>
+        
+        <div>
+          <div>
+            <div>
+              <a class="comment_userid">펭도리</a>
+              <a class="comment_date">2024-04-02 13:43:15</a>
+            </div>
+            <a class="comment_like" href="#">추천3</a>
+            <a id="commentDelete" class="comment_delete" href="#">삭제</a>
+            <a id="commentUpdate" class="comment_update" href="#">수정</a>
+          </div>
+          <div class="comment_content">드디어 끝났다~</div>
+        </div>
+      </div>
+      
+      <div class="comment_input">
+        <input id="createCommentContent" type="text">
+        <a id="createComment" href="#">등록</a>
+      </div>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal_id">아이디 : abcd****</div>
+          <label class="modal_pw_label" for="password">비밀번호 : </label>
+          <input class="modal_pw_input"type="password" id="password" required>
+          <div id="modalMessage" class="modalMessage"></div>
+          <button id="confirmBtn" class="confirmBtn">확인</button>
+          <button id="cancelBtn" class="cancelBtn">취소</button>
+          <div id="modalValue"></div>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+    <script>
+      var boardLikeButton = document.getElementById("likeButton");
+      boardLikeButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        boardLikeButton.classList.toggle("active");
+      });
+
+      var commentLikeButtons = document.querySelectorAll(".comment_like");
+      commentLikeButtons.forEach(function(commentLikeButton) {
+        commentLikeButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        commentLikeButton.classList.toggle("active");
+        });
+      });
+      
+      function boardDeleteCheck(event) {
+          event.preventDefault();
+          document.getElementById('modalValue').innerText = '1';
+          document.getElementById('myModal').style.display = 'block';
+      }
+
+      function commentDeleteCheck(event) {
+          event.preventDefault();
+          document.getElementById('modalValue').innerText = '2';
+          document.getElementById('myModal').style.display = 'block';
+      }
+      
+      document.getElementById('boardDelete').addEventListener('click', boardDeleteCheck);  
+      document.getElementById('commentDelete').addEventListener('click', commentDeleteCheck);
+      
+      document.getElementById("createComment").addEventListener('click', checkCreateComment);
+      function checkCreateComment(event) {
+        event.preventDefault();
+        var commentContent = document.getElementById('createCommentContent');
+        if (commentContent.value === "") {
+          alert("내용을 입력하세요.");
+        } else {
+          commentContent.value = "";
+        }
+      }
+      
+      document.getElementById('confirmBtn').addEventListener('click', function () {
+        var password = document.getElementById('password').value;
+        var value = document.getElementById('modalValue').innerText;
+        if(password !== 'abcd1234'){
+          document.getElementById('modalMessage').innerText = "비밀번호가 일치하지 않습니다.";
+        } else {
+          document.getElementById('modalMessage').innerText = "";
+          document.getElementById('password').value = "";
+          document.getElementById('modalMessage').innerText = "";
+          document.getElementById('myModal').style.display = 'none';
+          alert("삭제 완료");
+          if(value==='1'){
+            location.href = "board_list_free.html";
+          } else if(value==='2'){
+            location.href = "board_view_free.html";
+          }
+
+        }
+      });
+  
+      document.getElementById('cancelBtn').addEventListener('click', function () {
+        document.getElementById('password').value = "";
+        document.getElementById('modalMessage').innerText = "";
+        document.getElementById('myModal').style.display = 'none';
+      });
+      
+    </script>
+
+  </body>
+</html>
