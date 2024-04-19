@@ -310,7 +310,7 @@ a.selected {
 }
 
 .board_like > a.active {
-  background-color: red;
+  background-color: rgb(255, 100, 100);
 }
 
 .comment_list_tag > a {
@@ -361,7 +361,7 @@ a.selected {
 }
 
 .comment_like.active {
-  background-color: red;
+  background-color: rgb(255, 100, 100);
 }
 
 .comment_list > .best_comment,
@@ -430,7 +430,7 @@ a.selected {
 .write_content {
   margin-top: 5px;
   width: 100%;
-  height: 65%;
+  height: 40%;
   text-align: left;
   padding: 5px;
   font-size: 15px;
@@ -456,16 +456,11 @@ a.selected {
   margin-right: 0px;
 }
 
-
-/* 반응형 웹 디자인 */
-
-/* 전체 페이지 스타일 */
 body {
     margin: 0;
     padding: 0;
 }
 
-/* 로그인 폼 스타일 */
 .user_wrap {
     display: flex;
     justify-content: center;
@@ -495,7 +490,7 @@ body {
 }
 
 .user_info_title >a {
-   display: inline-block;
+  display: inline-block;
   border: 1px solid black;
   width: 340px;
   font-size: 2.5em;
