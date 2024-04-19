@@ -56,7 +56,7 @@ a {
   border: 1px solid black;
   margin-right: 5px;
   margin-top: 5px;
-  padding: 25px;
+  padding: 5px;
 }
 
 .row {
@@ -101,11 +101,9 @@ a {
 }
 
 .board_name {
-  border: 1px solid black;
-  text-align: center;
-  padding: 50px;
-  font-size: 2.5em;
-  background-color: #eeeeee;
+  text-align: left;
+  padding: 10px 10px;
+  font-size: 3em;
 }
 
 .board_category > a {
@@ -121,7 +119,8 @@ a {
 }
 
 a.selected {
-  background-color: yellow;
+  background-color: black;
+  color: white;
 }
 
 .board_list {
@@ -192,6 +191,7 @@ a.selected {
   line-height: 100%;
   text-decoration: none;
   color: inherit;
+  background-color: #eeeeee;
 }
 
 .board_page a.bt {
@@ -549,24 +549,17 @@ body {
   font-size: 1em;
 }
 
-
-/* 화면 크기가 작을 때(모바일 등) 로그인 폼 스타일 */
 @media only screen and (max-width: 600px) {
     .user_info_wrap {
         width: 90%;
     }
 }
 
-
-
-
-
 .mypage {  
-  border: 1px solid black;
-  text-align: center;
-  padding: 50px;
-  font-size: 2.5em;
-  background-color: #eeeeee;
+  text-align: left;
+  padding: 10px 10px;
+  font-size: 3em;
+  margin-bottom: -5px;
 }
 
 .mypage_button {
@@ -579,8 +572,11 @@ body {
   border: 1px solid black;
   text-align: center;
   background-color: #eeeeee;
-  width: 80px;
-  margin-left: 5px;
+  margin-top: 5px;
+  width: 85px;
+  vertical-align: middle;
+  font-size: 1.2em;
+  padding: 5px;
 }
 
 .mypage_button > a:first-child {
@@ -636,6 +632,7 @@ body {
 .my_info_wrap {
   text-align: center;
   margin-top: 5px;
+  padding-top: 50px;
 }
 
 .my_info_wrap > div > a,
