@@ -330,7 +330,7 @@ a.selected {
 }
 
 .board_like > a.active {
-  background-color: rgb(255, 100, 100);
+  background-color: rgb(250, 116, 138);
 }
 
 .comment_list_tag > a {
@@ -381,14 +381,14 @@ a.selected {
 }
 
 .comment_like.active {
-  background-color: rgb(255, 100, 100);
+  background-color: rgb(250, 116, 138);
 }
 
 .comment_list > .best_comment,
 .best_comment > div,
 .best_comment > div > a,
 .best_comment > div > div > a {
-  background-color: pink;
+  background-color: rgb(253, 223, 229);
 }
 
 .comment_list > div > div > div,
